@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatTabNav, MatTabLink } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'photon-app';
+  title = 'Photon Web Server';
 }

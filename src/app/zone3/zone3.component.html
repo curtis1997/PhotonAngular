@@ -1,0 +1,71 @@
+<h1>Zone 3</h1>
+
+<h3>Current Values</h3>
+
+<div style="display: table; width:100%; table-layout: fixed;">
+  <div style="display: table-cell; text-align: center">
+    <p>Temperature: {{this.currentValues && this.currentValues[this.currentValues.length-1] && this.currentValues[this.currentValues.length-1].temp + " °C"}}</p>
+  </div>
+  <div style="display: table-cell; text-align: center">
+    <p>Sound: {{this.currentValues && this.currentValues[this.currentValues.length-1] && this.currentValues[this.currentValues.length-1].sound + " dB"}}</p>
+  </div>
+  <div style="display: table-cell; text-align: center">
+    <p>Light: {{this.currentValues && this.currentValues[this.currentValues.length-1] && this.currentValues[this.currentValues.length-1].light + " Lux"}}</p>
+  </div>  
+</div>
+
+<div style="display: table; width:100%; table-layout: fixed;">
+    <div style="display: table-cell; text-align: center">
+      <p>Humidity: {{this.currentValues && this.currentValues[this.currentValues.length-1] && this.currentValues[this.currentValues.length-1].humidity + "%"}}</p>
+    </div>
+    <div style="display: table-cell; text-align: center">
+      <p>Door: {{this.currentValues && this.currentValues[this.currentValues.length-1] && this.currentValues[this.currentValues.length-1].door == 1 ? "Moving" : "Not Moving"}}</p>
+    </div>
+    <div style="display: table-cell; text-align: center">
+        <p>Chair: {{this.currentValues && this.currentValues[this.currentValues.length-1] && this.currentValues[this.currentValues.length-1].chair == 1 ? "Moving" : "Not Moving"}}</p>
+    </div>  
+  </div>
+
+<button mat-raised-button color="primary" class="update" (click)="getData()">Update</button>
+
+<h3>History</h3>
+
+<mat-progress-bar mode="indeterminate" *ngIf="!hasData"></mat-progress-bar>
+<ng-container>
+  <mat-table [hidden]="!hasData" [dataSource]="dataTable" class="mat-elevation-z8">
+    <!--Header Def-->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; let rIndex = index; columns: displayedColumns;"></mat-row>
+    <!--Column Defs-->
+    <ng-container matColumnDef="ID">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.ID}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="temp">
+      <mat-header-cell *matHeaderCellDef>Temperature</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.temp + " °C"}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="sound">
+      <mat-header-cell *matHeaderCellDef>Sound</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.sound + " dB"}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="light">
+      <mat-header-cell *matHeaderCellDef>Light</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.light + " Lux"}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="humidity">
+      <mat-header-cell *matHeaderCellDef>Humidity</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.humidity + "%"}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="door">
+      <mat-header-cell *matHeaderCellDef>Door</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.door == 1 ? "Moving" : "Not Moving"}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="chair">
+      <mat-header-cell *matHeaderCellDef>Chair</mat-header-cell>
+      <mat-cell *matCellDef="let data"> {{data.chair == 1 ? "Moving" : "Not Moving"}}</mat-cell>
+    </ng-container>
+    
+  </mat-table>
+  <mat-card style="border-radius: 0; text-align: center" *ngIf="dataTable.data && dataTable.data.length === 0">No records found</mat-card>
+</ng-container>
