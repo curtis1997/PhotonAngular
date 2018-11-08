@@ -50,21 +50,21 @@ export class LocationComponent implements OnInit {
         ).subscribe(data => {
           this.currentValues = data[data.length-1];
           switch(currentValues.deviceID) {
-                case "A": this.devices.A.zone = currentValues.currentZone; a = true;
+                case "A": this.devices.A.zone = this.currentValues.currentZone; a = true;
                 break;
-                case "B": this.devices.B.zone = currentValues.currentZone; b = true;
+                case "B": this.devices.B.zone = this.currentValues.currentZone; b = true;
                 break;
-                case "C": this.devices.C.zone = currentValues.currentZone; c = true;
+                case "C": this.devices.C.zone = this.currentValues.currentZone; c = true;
                 break;
-                case "D": this.devices.D.zone = currentValues.currentZone; d = true;
+                case "D": this.devices.D.zone = this.currentValues.currentZone; d = true;
                 break;
-                case "E": this.devices.E.zone = currentValues.currentZone; e = true;
+                case "E": this.devices.E.zone = this.currentValues.currentZone; e = true;
                 break;
-                case "F": this.devices.F.zone = currentValues.currentZone; f = true;
+                case "F": this.devices.F.zone = this.currentValues.currentZone; f = true;
                 break;
-                case "G": this.devices.G.zone = currentValues.currentZone; g = true;
+                case "G": this.devices.G.zone = this.currentValues.currentZone; g = true;
                 break;
-                case "H": this.devices.H.zone = currentValues.currentZone; h = true;
+                case "H": this.devices.H.zone = this.currentValues.currentZone; h = true;
                 break;
               }
         });
