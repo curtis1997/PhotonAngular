@@ -43,21 +43,21 @@ export class LocationComponent implements OnInit {
       let a,b,c,d,e,f,g,h = false;
       while((!a || !b || !c || !d || !e || !f || !g || !h) && i >= 0) {
               switch(JSON.parse(data)[i].deviceID) {
-                case "A": if(this.devices.B.zone === "null") {this.devices.A.zone = JSON.parse(data)[i].currentZone; a = true;};
+                case "A": if(this.devices.B.zone === "null") {this.devices.A.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "B": if(this.devices.B.zone === "null") {this.devices.B.zone = JSON.parse(data)[i].currentZone; b = true;};
+                case "B": if(this.devices.B.zone === "null") {this.devices.B.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "C": if(this.devices.B.zone === "null") {this.devices.C.zone = JSON.parse(data)[i].currentZone; c = true;};
+                case "C": if(this.devices.B.zone === "null") {this.devices.C.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "D": if(this.devices.B.zone === "null") {this.devices.D.zone = JSON.parse(data)[i].currentZone; d = true;};
+                case "D": if(this.devices.B.zone === "null") {this.devices.D.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "E": if(this.devices.B.zone === "null") {this.devices.E.zone = JSON.parse(data)[i].currentZone; e = true;};
+                case "E": if(this.devices.B.zone === "null") {this.devices.E.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "F": if(this.devices.B.zone === "null") {this.devices.F.zone = JSON.parse(data)[i].currentZone; f = true;};
+                case "F": if(this.devices.B.zone === "null") {this.devices.F.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "G": if(this.devices.B.zone === "null") {this.devices.G.zone = JSON.parse(data)[i].currentZone; g = true;};
+                case "G": if(this.devices.B.zone === "null") {this.devices.G.zone = JSON.parse(data)[i].currentZone;};
                 break;
-                case "H": if(this.devices.B.zone === "null") {this.devices.H.zone = JSON.parse(data)[i].currentZone; h = true;};
+                case "H": if(this.devices.B.zone === "null") {this.devices.H.zone = JSON.parse(data)[i].currentZone;};
                 break;
               }
               i--;
