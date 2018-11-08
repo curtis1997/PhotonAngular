@@ -34,6 +34,22 @@ export class LocationComponent implements OnInit {
 
   ngOnInit() {
     this.setupDevices();
+    merge(timer(0, 2000))
+        .pipe(
+          startWith({}),
+          switchMap(() => {
+            let httpParams = new HttpParams().set('zone', 'objects');
+            return this.http.post("http://photon.luges.net/getData.php", httpParams, {responseType: 'text'});
+          }),
+          map(data => {
+            return JSON.parse(data);
+          }),
+          catchError(() => {
+            return observableOf([]);
+          })
+        ).subscribe(data => {
+          this.currentValues = data[data.length-1];
+        });
   }
 
   setupDevices(){
