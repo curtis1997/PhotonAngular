@@ -1,0 +1,22 @@
+<h1>Detection</h1>
+
+<h3 *ngIf="motion">
+  Motion Detected
+</h3>
+<h3 *ngIf="sound">
+  Sound Detected
+</h3>
+<h2 *ngIf="!sound && !motion">
+  Waiting for Detection...
+</h2>
+<div>
+  <h2 *ngIf="sound || motion">
+      Device ID: {{this.currentValues.deviceID}}
+    </h2>
+    <h2 *ngIf="sound || motion">
+      Time: {{this.currentValues.time}} 
+    </h2>
+    <h2 *ngIf="sound || motion">
+        Zone: {{this.currentValues.zone}} 
+    </h2>
+</div>

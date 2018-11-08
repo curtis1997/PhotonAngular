@@ -1,0 +1,110 @@
+<h1>Location</h1>
+
+<mat-tab-group>
+    <mat-tab label="Live Data">
+      <h3>Live Data</h3>
+
+      <div class="zone1">
+        <div *ngIf="devices.A.zone === '1'" class="A">💺 1</div>
+        <div *ngIf="devices.B.zone === '1'" class="B">💺 2</div>
+        <div *ngIf="devices.C.zone === '1'" class="C">💺 3</div>
+        <div *ngIf="devices.D.zone === '1'" class="D">🚪</div>
+        <div *ngIf="devices.E.zone === '1'" class="E">👨</div>
+        <div *ngIf="devices.F.zone === '1'" class="F">👩</div>
+        <div *ngIf="devices.G.zone === '1'" class="G">👣</div>
+        <div *ngIf="devices.H.zone === '1'" class="H">👣</div>
+      </div>
+
+      <div class="zone2">
+        <div *ngIf="devices.A.zone === '2'" class="A">💺 1</div>
+        <div *ngIf="devices.B.zone === '2'" class="B">💺 2</div>
+        <div *ngIf="devices.C.zone === '2'" class="C">💺 3</div>
+        <div *ngIf="devices.D.zone === '2'" class="D">🚪</div>
+        <div *ngIf="devices.E.zone === '2'" class="E">👨</div>
+        <div *ngIf="devices.F.zone === '2'" class="F">👩</div>
+        <div *ngIf="devices.G.zone === '2'" class="G">👣</div>
+        <div *ngIf="devices.H.zone === '2'" class="H">👣</div>
+      </div>
+
+      <div class="zone3">
+        <div *ngIf="devices.A.zone === '3'" class="A">💺 1</div>
+        <div *ngIf="devices.B.zone === '3'" class="B">💺 2</div>
+        <div *ngIf="devices.C.zone === '3'" class="C">💺 3</div>
+        <div *ngIf="devices.D.zone === '3'" class="D">🚪</div>
+        <div *ngIf="devices.E.zone === '3'" class="E">👨</div>
+        <div *ngIf="devices.F.zone === '3'" class="F">👩</div>
+        <div *ngIf="devices.G.zone === '3'" class="G">👣</div>
+        <div *ngIf="devices.H.zone === '3'" class="H">👣</div>
+      </div>
+
+      💺 = Chair
+      🚪 = Door
+      👨 = User 1
+      👩 = User 2
+      👣 = Motion Detector
+    </mat-tab>
+    <mat-tab label="History">
+      <h3>History</h3>
+
+      <ng-container>
+  
+        <div class="center" *ngIf="!showHistory">
+          <mat-form-field>
+            <input matInput [(ngModel)]='date' value="{{date}}" [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>  
+          <mat-form-field>
+            <input matInput [(ngModel)]='time' value="{{time}}" id="timeInput" style="margin-left: 10px;" type="time">
+          </mat-form-field>            
+        <br>
+        <button mat-raised-button (click)="simulateHistory()">Simulate</button>
+        </div>
+        <ng-container *ngIf="showHistory">
+        <h2>{{showTime}}</h2>
+        <div class="zone1">
+            <div *ngIf="devices.A.zone === '1'" class="A">💺 1</div>
+            <div *ngIf="devices.B.zone === '1'" class="B">💺 2</div>
+            <div *ngIf="devices.C.zone === '1'" class="C">💺 3</div>
+            <div *ngIf="devices.D.zone === '1'" class="D">🚪</div>
+            <div *ngIf="devices.E.zone === '1'" class="E">👨</div>
+            <div *ngIf="devices.F.zone === '1'" class="F">👩</div>
+            <div *ngIf="devices.G.zone === '1'" class="G">👣</div>
+            <div *ngIf="devices.H.zone === '1'" class="H">👣</div>
+          </div>
+    
+          <div class="zone2">
+            <div *ngIf="devices.A.zone === '2'" class="A">💺 1</div>
+            <div *ngIf="devices.B.zone === '2'" class="B">💺 2</div>
+            <div *ngIf="devices.C.zone === '2'" class="C">💺 3</div>
+            <div *ngIf="devices.D.zone === '2'" class="D">🚪</div>
+            <div *ngIf="devices.E.zone === '2'" class="E">👨</div>
+            <div *ngIf="devices.F.zone === '2'" class="F">👩</div>
+            <div *ngIf="devices.G.zone === '2'" class="G">👣</div>
+            <div *ngIf="devices.H.zone === '2'" class="H">👣</div>
+          </div>
+    
+          <div class="zone3">
+            <div *ngIf="devices.A.zone === '3'" class="A">💺 1</div>
+            <div *ngIf="devices.B.zone === '3'" class="B">💺 2</div>
+            <div *ngIf="devices.C.zone === '3'" class="C">💺 3</div>
+            <div *ngIf="devices.D.zone === '3'" class="D">🚪</div>
+            <div *ngIf="devices.E.zone === '3'" class="E">👨</div>
+            <div *ngIf="devices.F.zone === '3'" class="F">👩</div>
+            <div *ngIf="devices.G.zone === '3'" class="G">👣</div>
+            <div *ngIf="devices.H.zone === '3'" class="H">👣</div>
+          </div>
+    
+          💺 = Chair
+          🚪 = Door
+          👨 = User 1
+          👩 = User 2
+          👣 = Motion Detector
+          </ng-container>
+      </ng-container>
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+

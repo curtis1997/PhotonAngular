@@ -1,9 +1,27 @@
-<div style="text-align: center;">
-  <button mat-raised-button color="primary" routerLink="">Home</button>
-  <button mat-raised-button color="primary" routerLink="zone1">Zone 1</button>
-  <button mat-raised-button color="primary" routerLink="zone2">Zone 2</button>
-  <button mat-raised-button color="primary" routerLink="zone3">Zone 3</button>
-</div>
-  
+<mat-menu class="navigationMenu" #zoneMenu="matMenu">
+  <a mat-menu-item routerLink="zone1">Zone 1</a>
+  <mat-divider></mat-divider>
+  <a mat-menu-item routerLink="zone2">Zone 2</a>
+  <mat-divider></mat-divider>
+  <a mat-menu-item routerLink="zone3">Zone 3</a>
+</mat-menu>
+
+<mat-menu class="navigationMenu" #subscriberMenu="matMenu">
+    <a mat-menu-item routerLink="/subscriber/profile">My Profile</a>
+</mat-menu>
+
+<ul>
+  <li><a mat-raised-button color="primary" routerLink="">Home</a></li>
+  <li>
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="zoneMenu">Zones</button>
+  </li>
+  <li><a mat-raised-button color="primary" routerLink="location">Location</a></li>
+  <li><a mat-raised-button color="primary" routerLink="detection">Detection</a></li>
+</ul>
+
+<div class="pad-content">
   <router-outlet></router-outlet>
+</div>
+
+<router-outlet></router-outlet>
   

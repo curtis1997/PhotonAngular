@@ -5,12 +5,25 @@ h1 {
   }
 
 .mat-raised-button {
-    margin-left: 5px;
-    margin-right: 5px;
-    width:23%;
+    width: 110px;
     color: white;
+}
+
+.mat-menu-item {
+    text-align: center;
 }
 
 .mat-tab-nav-bar, .mat-tab-header {
     border-bottom: 0;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    padding: 0;
+  }
+  
+  ul li {
+    display: inline;
+    margin-right: 30px;
+  }
