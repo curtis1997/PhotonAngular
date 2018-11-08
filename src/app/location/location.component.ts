@@ -62,6 +62,7 @@ export class LocationComponent implements OnInit {
               }
               i--;
             }
+      console.log(this.devices);
     });
   }
 
